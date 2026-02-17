@@ -13,7 +13,10 @@ keywords = ["unicode", "symbols"]
 [features]
 default = ["styling"]
 styling = []
-_test-unicode-conformance = ["ureq"]
+_test-unicode-conformance = ["ureq", "unicode-normalization"]
+
+[dependencies]
+unicode-normalization = { version = "0.1.25", optional = true }
 
 [build-dependencies]
 ureq = { version = "3.0.12", optional = true }

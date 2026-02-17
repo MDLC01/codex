@@ -159,10 +159,7 @@ mod test {
     #[test]
     fn random_sample() {
         for (key, control) in [
-            (
-                "backslash",
-                [("", "\\"), ("not", "⧷"), ("o", "⦸")].as_slice(),
-            ),
+            ("backslash", [("", "\\"), ("not", "⧷"), ("o", "⦸")].as_slice()),
             ("chi", &[("", "χ")]),
             ("forces", &[("", "⊩"), ("not", "⊮")]),
             ("interleave", &[("", "⫴"), ("big", "⫼"), ("struck", "⫵")]),
@@ -189,6 +186,17 @@ mod test {
 
             assert_eq!(variants, control);
         }
+    }
+
+    /// Tests that all symbols use NFC, i.e., use precomposed codepoints when
+    /// possible.
+    #[cfg(feature = "_test-unicode-conformance")]
+    #[test]
+    fn symbols_are_nfc() {
+        assert!(
+            are_all_variants_valid(ROOT, unicode_normalization::is_nfc),
+            "symbols should use NFC (see list above)",
+        )
     }
 
     /// https://www.unicode.org/reports/tr51/#def_text_presentation_selector.
