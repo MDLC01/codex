@@ -165,6 +165,11 @@ pub enum NumeralSystem<'a> {
 }
 
 impl<'a> NumeralSystem<'a> {
+    /// Tries to represent a number in this numeral system.
+    ///
+    /// If `Ok(r)` is returned, `r` is a value of a type that implements
+    /// [`Display`] by printing the number as represented in this numeral
+    /// system.
     pub const fn apply(
         &'a self,
         number: u64,
@@ -498,6 +503,8 @@ impl<'a> NumeralSystem<'a> {
 ///
 /// Notably, this type implements [`Display`] and is thus compatible with
 /// [`format!()`].
+///
+/// Values of this type are constructed by [`NumeralSystem::apply`].
 #[derive(Debug, Clone, Copy)]
 pub struct RepresentedNumber<'a> {
     /// Invariant: This system must be able to represent the number.
