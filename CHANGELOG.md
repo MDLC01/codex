@@ -62,8 +62,6 @@
   - `bowtie.filled.l`: ⧑
   - `bowtie.filled.r`: ⧒
   - `tack.rrr`: ⫢
-  - `tacks.llrr`: ⟚
-  - `tacks.tb`: ⫩
 
 - Currency
   - `riyal`: ⃁
@@ -85,7 +83,6 @@
 - `lt.tri` and variants in favor of `lt.closed`
 - `join` and its variants in favor of `bowtie.big` with the same variants
 - `tack.r.double`, `tack.r.double.not`, `tack.l.double`, `tack.t.double`, and `tack.b.double` in favor of `tack.rr`, `tack.rr.not`, `tack.ll`, `tack.tt`, and `tack.bb` respectively.
-- `tack.l.r` in favor of `tacks.lr`.
 
 ### Removals **(Breaking change)**
 
