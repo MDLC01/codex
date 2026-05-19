@@ -6,6 +6,7 @@
 
 - Trivially updated to Unicode 17.0.0
 - Added numeral systems API under the `numeral-systems` feature flag
+  - Compared to Typst 0.14.2, added Tibetan numerals to `numeral-systems`.
 
 ### New in `sym`
 
@@ -25,6 +26,8 @@
   - `gt.arc.eq` ⪩
   - `lt.arc`: ⪦
   - `lt.arc.eq`: ⪨
+  - `mapsfrom`: ↤
+  - `mapsfrom.long` ⟻
   - `subset.approx`: ⫉
   - `subset.closed`: ⫏
   - `subset.closed.eq`: ⫑
@@ -70,6 +73,12 @@
   - `tilde.gt.slant`: ⪞︀
   - `tilde.lt`: ⪝
   - `tilde.lt.slant`: ⪝︀
+  - `eq.dot`: ≐
+  - `plus.hat`: ⨣
+  - `approx.hat`: ⩯
+  - `lt.quest`: ⩻
+  - `gt.quest`: ⩼
+  - `eq.ast`: ⩮
 
 - Miscellaneous technical
   - `bowtie.stroked`: ⋈
@@ -80,6 +89,13 @@
   - `bowtie.filled`: ⧓
   - `bowtie.filled.l`: ⧑
   - `bowtie.filled.r`: ⧒
+
+- Arrows
+  - `arrow.tr.bar`: 🢹
+  - `arrow.br.bar`: 🢺
+  - `arrow.tl.bar`: 🢸
+  - `arrow.bl.bar`: 🢻
+  - `arrows.rl.long`: 🣐
 
 - Currency
   - `riyal`: ⃁

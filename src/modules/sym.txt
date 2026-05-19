@@ -259,6 +259,7 @@ plus +
   .square ⊞
   .triangle ⨹
   .triple ⧻
+  .hat ⨣
 minus −
   .o ⊖
   .dot ∸
@@ -287,9 +288,11 @@ ratio ∶
 
 // Relations.
 eq =
+  .ast ⩮
   .star ≛
   .o ⊜
   .colon ≕
+  .dot ≐
   .dots ≑
   .dots.down ≒
   .dots.up ≓
@@ -312,6 +315,7 @@ eq =
 gt >
   .o ⧁
   .dot ⋗
+  .quest ⩼
   .approx ⪆
   .arc ⪧
   .arc.eq ⪩
@@ -351,6 +355,7 @@ gt >
 lt <
   .o ⧀
   .dot ⋖
+  .quest ⩻
   .approx ⪅
   .arc ⪦
   .arc.eq ⪨
@@ -390,6 +395,7 @@ lt <
 approx ≈
   .eq ≊
   .not ≉
+  .hat ⩯
 prec ≺
   .approx ⪷
   @deprecated: `prec.curly.eq` is deprecated, use `prec.eq.slant` instead
@@ -594,6 +600,8 @@ qed ∎
 // Function and category theory.
 mapsto ↦
   .long ⟼
+mapsfrom ↤
+  .long ⟻
 compose ∘
   .o ⊚
 convolve ∗
@@ -1036,21 +1044,25 @@ arrow
   .t.b.filled ⬍
   .t.b.stroked ⇳
   .tr ↗\vs{text}
+  .tr.bar 🢹
   .tr.double ⇗
   .tr.filled ⬈
   .tr.hook ⤤
   .tr.stroked ⬀
   .br ↘\vs{text}
+  .br.bar 🢺
   .br.double ⇘
   .br.filled ⬊
   .br.hook ⤥
   .br.stroked ⬂
   .tl ↖\vs{text}
+  .tl.bar 🢸
   .tl.double ⇖
   .tl.filled ⬉
   .tl.hook ⤣
   .tl.stroked ⬁
   .bl ↙\vs{text}
+  .bl.bar 🢻
   .bl.double ⇙
   .bl.filled ⬋
   .bl.hook ⤦
@@ -1070,6 +1082,7 @@ arrows
   .lr ⇆
   .lr.stop ↹
   .rl ⇄
+  .rl.long 🣐
   .tb ⇅
   .bt ⇵
   .rrr ⇶
