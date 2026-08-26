@@ -230,6 +230,7 @@ impl MathStyle {
     ) -> MathStyle {
         use MathVariant::*;
         use conversions::*;
+        let c = normalize(c);
         match (variant.unwrap_or(Plain), bold, italic) {
             (SansSerif, false, Some(false)) if is_latin(c) => MathStyle::SansSerif,
             (SansSerif, false, _) if is_latin(c) => MathStyle::SansSerifItalic,
@@ -370,6 +371,7 @@ impl fmt::Display for ToStyle {
 pub fn to_style(c: char, style: MathStyle) -> ToStyle {
     use MathStyle::*;
     use conversions::*;
+    let c = normalize(c);
     let styled = match style {
         Plain => [c, '\0'],
         Bold => [to_bold(c), '\0'],
@@ -415,6 +417,20 @@ pub fn to_style(c: char, style: MathStyle) -> ToStyle {
 mod conversions {
     const VARIATION_SELECTOR_1: char = '\u{FE00}';
     const VARIATION_SELECTOR_2: char = '\u{FE01}';
+
+    /// Applies relevant canonical decompositions.
+    ///
+    /// For example, this function converts U+2126 OHM SIGN to the regular
+    /// capital omega.
+    ///
+    /// All functions in this module expect that characters have been
+    /// normalized.
+    pub fn normalize(c: char) -> char {
+        match c {
+            'Ω' => 'Ω',
+            _ => c,
+        }
+    }
 
     #[inline]
     pub fn is_digit(c: char) -> bool {
