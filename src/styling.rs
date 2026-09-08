@@ -427,7 +427,12 @@ mod conversions {
     /// normalized.
     pub fn normalize(c: char) -> char {
         match c {
-            'Ω' => 'Ω',
+            // OHM SIGN
+            '\u{2126}' => 'Ω',
+            // KELVIN SIGN
+            '\u{212A}' => 'K',
+            // GREEK PROSGEGRAMMENI
+            '\u{1FBE}' => 'ι',
             _ => c,
         }
     }
